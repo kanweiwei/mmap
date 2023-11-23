@@ -1,0 +1,28 @@
+{
+  "name": "mmap-cc",
+  "version": "1.1.4",
+  "main": "./index.js",
+  "license": "MIT",
+  "scripts": {
+    "install": "node-pre-gyp install --fallback-to-build"
+  },
+  "binary": {
+    "module_name": "mmap-cc",
+    "module_path": "./lib/binding/napi-v{napi_build_version}-{platform}-{libc}-{arch}",
+    "host": "https://github.com/kanweiwei/mmap-cc/releases/download/",
+    "remote_path": "v{version}",
+    "package_name": "napi-v{napi_build_version}-{platform}-{libc}-{arch}.tar.gz",
+    "napi_versions": [
+      6
+    ]
+  },
+  "dependencies": {
+    "@mapbox/node-pre-gyp": "^1.0.9",
+    "node-addon-api": "^5.0.0",
+    "node-gyp": "^10.0.1"
+  },
+  "gypfile": true,
+  "devDependencies": {
+    "node-pre-gyp-github": "^1.4.4"
+  }
+}
