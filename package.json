@@ -3,6 +3,10 @@
   "version": "0.1.1",
   "main": "./index.js",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kanweiwei/mmap.git"
+  },
   "scripts": {
     "install": "node-pre-gyp install --fallback-to-build",
     "build": "node-pre-gyp build"
