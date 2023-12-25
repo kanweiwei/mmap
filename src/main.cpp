@@ -16,7 +16,7 @@ Napi::Value MmapSync(const Napi::CallbackInfo &info)
   Napi::Env env = info.Env();
   Napi::HandleScope scope(env);
 
-  std::string path = info[0].As<Napi::String>();
+  std::string path = info[0].As<Napi::String>().Utf8Value();
 
   // 将文件路径转换为文件句柄
   HANDLE hFile = ::CreateFile(path.c_str(), GENERIC_READ, FILE_SHARE_READ, nullptr, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, nullptr);
@@ -64,7 +64,7 @@ Napi::Value MmapSync(const Napi::CallbackInfo &info)
   Napi::Env env = info.Env();
   Napi::HandleScope scope(env);
 
-  std::string path = info[0].As<Napi::String>();
+  std::string path = info[0].As<Napi::String>().Utf8Value();
 
   int fd = open(path.c_str(), O_RDONLY);
   if (fd < 0)
