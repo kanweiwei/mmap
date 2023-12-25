@@ -48,6 +48,9 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
           architecture: ${{ matrix.host }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
 
       - name: Add msbuild to PATH
         uses: microsoft/setup-msbuild@v1.1
