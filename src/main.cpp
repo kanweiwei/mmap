@@ -18,7 +18,6 @@ Napi::Value MmapSync(const Napi::CallbackInfo &info)
 
   std::string path = info[0].As<Napi::String>().Utf8Value();
 
-  // 将文件路径转换为文件句柄
   HANDLE hFile = ::CreateFile(path.c_str(), GENERIC_READ, FILE_SHARE_READ, nullptr, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, nullptr);
   if (hFile == INVALID_HANDLE_VALUE)
   {
@@ -45,7 +44,6 @@ Napi::Value MmapSync(const Napi::CallbackInfo &info)
 
   DWORD fileSize = ::GetFileSize(hFile, nullptr);
 
-  // 使用完毕后清理资源
   auto finalizer = [hFile, hMap, pView](Napi::Env env, void *data)
   {
     ::UnmapViewOfFile(pView);
