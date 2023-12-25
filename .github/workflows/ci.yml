@@ -55,6 +55,9 @@ jobs:
         with:
           msbuild-architecture: ${{ matrix.target }}
 
+      - name: Python Version
+        run: python3 --version
+
       - name: Install dependencies
         run: yarn install --ignore-scripts
 
