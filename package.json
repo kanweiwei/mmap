@@ -10,7 +10,7 @@
   "binary": {
     "module_name": "mmap",
     "module_path": "./lib/binding/napi-v{napi_build_version}-{platform}-{libc}-{arch}",
-    "host": "https://github.com/kanweiwei/mmap-cc/releases/download/",
+    "host": "https://github.com/kanweiwei/mmap/releases/download/",
     "remote_path": "v{version}",
     "package_name": "napi-v{napi_build_version}-{platform}-{libc}-{arch}.tar.gz",
     "napi_versions": [
